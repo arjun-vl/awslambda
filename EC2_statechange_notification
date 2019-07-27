@@ -20,7 +20,7 @@ def publish_sns():
 
     Waqt = DT.strftime("%Y-%m-%d %H:%M:%S")
     msg = '\n\nHello Team, \n\nFollowing EC2 instances have been started / stopped: \n\nStopped instance ID: \n'+ str(affected_instances1)+ '\n\nStarted instances ID: \n'+str(affected_instances2)+'\n\nInstance state changed time IST: '+str(Waqt)+''
-    response = snsClient.publish(TopicArn='arn:aws:sns:us-east-1:195076727056:instance_state',Message=msg,Subject=subject_str)
+    response = snsClient.publish(TopicArn='your SNS Topic ARN',Message=msg,Subject=subject_str)
     print response
     
 def lambda_handler(event, context):
